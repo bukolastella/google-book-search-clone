@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.header1 {
+  background-color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+  .app {
+    width: 25px;
+    height: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 20px;
+    div {
+      background-color: rgb(131, 129, 129);
+      width: 5px;
+      height: 5px;
+      margin: 1px;
+    }
+  }
+}
+.account {
+  width: 35px;
+  height: 35px;
+  background-color: rgb(226, 63, 63);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+}
+
+.google {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  height: 50vh;
+  width: 80%;
+  margin: 5rem auto;
+}
+.google-logo {
+  background-image: url("../images/googlelogo_color_272x92dp.png");
+  width: 50%;
+  height: 40%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  text-transform: capitalize;
+  color: #4285f4;
+  font-size: 1.4rem;
+  position: relative;
+  span {
+    position: absolute;
+    left: 75%;
+    bottom: 0%;
+    text-align: center;
+  }
+}
+.search {
+  width: 80%;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  input {
+    width: 75%;
+    height: 30px;
+    margin-right: 10px;
+    border: 1px solid rgb(209, 208, 208);
+  }
+  input:focus {
+    outline: none;
+    padding: 1rem;
+  }
+  button {
+    width: 80px;
+    height: 30px;
+    color: white;
+    background-color: #4387f5;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    outline: none;
+  }
+}
+
+.text {
+  color: rgb(71, 70, 70);
+}
+.library {
+  color: #551ed4;
+}
+.footer1 {
+  // display: flex;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  background: #f2f2f2;
+  border-top: 1px solid #e4e4e4;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: #666;
+  text-transform: capitalize;
+  div {
+    margin: 1rem;
+    span {
+      margin: 0.5rem;
+    }
+  }
+}

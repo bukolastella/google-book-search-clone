@@ -1,0 +1,27 @@
+@mixin header {
+  .app {
+    width: 25px;
+    height: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 20px;
+    div {
+      background-color: rgb(131, 129, 129);
+      width: 5px;
+      height: 5px;
+      margin: 1px;
+    }
+  }
+}
+@mixin name {
+  .account {
+    width: 35px;
+    height: 35px;
+    background-color: rgb(226, 63, 63);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: white;
+  }
+}
