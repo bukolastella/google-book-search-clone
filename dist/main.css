@@ -141,7 +141,9 @@
 }
 
 .footer1 {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -431,6 +433,10 @@ form select {
   color: #5f6368;
 }
 
+.right a:visited {
+  color: #609;
+}
+
 .right p {
   margin-top: 0.5rem;
   color: #202124;
@@ -496,6 +502,83 @@ form select {
 
 .title a {
   text-overflow: ellipsis;
+}
+
+.select span {
+  color: #5f6368;
+  text-transform: capitalize;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.select span:hover {
+  text-decoration: underline;
+  color: black;
+}
+
+select:hover {
+  color: black;
+}
+
+.section-footer {
+  bottom: 0;
+  width: 100%;
+  display: none;
+}
+
+.footer2,
+.footer3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #f2f2f2;
+  border-top: 1px solid #e4e4e4;
+  padding: 1rem 15rem;
+  color: #666;
+  text-transform: capitalize;
+}
+
+.footer2 div span,
+.footer3 div span {
+  font-size: 0.9rem;
+}
+
+.footer3 div {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.error {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.error div {
+  margin: 1rem auto;
+}
+
+.ul {
+  margin: 1rem;
+  display: list-item;
+  list-style-type: disc;
+}
+
+div.buks {
+  color: #1a73e8;
 }
 
 .google-down {
@@ -567,74 +650,4 @@ form select {
 
 .last {
   text-align: right;
-}
-
-.select span {
-  color: #5f6368;
-  text-transform: capitalize;
-  cursor: pointer;
-  font-size: 0.8rem;
-}
-
-.select span:hover {
-  text-decoration: underline;
-  color: black;
-}
-
-.section-footer {
-  height: 50px;
-  bottom: 0;
-  width: 100%;
-  display: none;
-}
-
-.footer2,
-.footer3 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: #f2f2f2;
-  border-top: 1px solid #e4e4e4;
-  padding: 0.8rem 15rem;
-  color: #666;
-  text-transform: capitalize;
-}
-
-.footer2 div span,
-.footer3 div span {
-  font-size: 0.9rem;
-}
-
-.footer3 div {
-  width: 40%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.error {
-  width: 100%;
-}
-
-.error div {
-  margin: 1rem auto;
-  color: royalblue;
-}
-
-.ul,
-.ul li {
-  display: list-item !important;
-  list-style-type: disc !important;
 }

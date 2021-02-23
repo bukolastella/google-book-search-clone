@@ -1,0 +1,58 @@
+.google-down {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 60px;
+  //   display: none;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  div[data-index] {
+    // width: 100px;
+    // height: 60px;
+    // background-color: red;
+    display: flex;
+    flex-direction: column;
+    span {
+      display: block;
+      cursor: pointer;
+    }
+    span.active {
+      background-image: url("../images/nav_logo242.webp");
+      background-position: -53px 0;
+      background-repeat: no-repeat;
+      width: 20px;
+      height: 40px;
+      cursor: default;
+    }
+    span.no {
+      height: 20px;
+      cursor: pointer;
+      color: #1a73e8;
+      text-transform: capitalize;
+    }
+  }
+}
+.first {
+  background-image: url("../images/nav_logo242.webp");
+  background-position: -24px 0;
+  background-repeat: no-repeat;
+  width: 28px;
+  height: 40px;
+}
+.not-active {
+  background-image: url("../images/nav_logo242.webp");
+  background-position: -74px 0;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 40px;
+}
+.last-img {
+  background-image: url("../images/nav_logo242.webp");
+  background-position: -96px 0;
+  width: 71px;
+  height: 40px;
+}
+
+.last {
+  text-align: right;
+}

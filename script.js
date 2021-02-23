@@ -11,7 +11,8 @@ const relevance = document.querySelector(".relevance");
 const select = document.querySelector(".select");
 const clear = document.querySelector(".clear");
 const sectionFooter = document.querySelector(".section-footer");
-let searchvalue, currentPage;
+const count = document.querySelector(".count");
+let searchvalue, currentPage, country;
 
 function view(ev) {
   if (ev.accessInfo.viewability == "ALL_PAGES")
@@ -24,7 +25,8 @@ const google = async function (api) {
   try {
     const res = await fetch(api);
     const data = await res.json();
-    console.log(data.items);
+    country = data.items[0].saleInfo.country.toLocaleString();
+    // console.log();
 
     //   console.log(data.items.map((r) => r.volumeInfo.publishedDate));
 
@@ -85,15 +87,39 @@ const google = async function (api) {
       .join("");
     renderSection.innerHTML = "";
     renderSection.insertAdjacentHTML("afterbegin", html);
-    if (renderSection.innerHTML != "") sectionFooter.style.display = "block";
+    sectionFooter.style.display = "block";
+    count.textContent = country;
   } catch (err) {
-    console.log(err);
+    // console.log(err);
+    const html = `<section class="error">
+    <span
+      >Your search - <b class="word">${searchvalue}</b> - did not match any book
+      results. Reset search tools</span
+    >
+    <div>Suggestions:</div>
+    <ul class="ul">
+      <li class="li">Make sure that all words are spelled correctly.</li>
+      <li class="li">Try different keywords.</li>
+      <li class="li">Try more general keywords.</li>
+      <li class="li">Try fewer keywords.</li>
+    </ul>
+  </section>`;
+    renderSection.innerHTML = "";
+    renderSection.insertAdjacentHTML("afterbegin", html);
+    googleDown.style.display = "none";
+    if (renderSection.innerHTML != "") {
+      sectionFooter.style.display = "block";
+      sectionFooter.style.position = "absolute";
+      sectionFooter.style.bottom = "0rem";
+      count.textContent = country;
+    }
   }
 };
 const searchInput2 = document.querySelector(".search-input2");
 button.addEventListener("click", function (e) {
   e.preventDefault();
   searchvalue = searchInput.value;
+  searchInput.value = "";
   if (!searchvalue) return;
   firstPage.style.display = "none";
   secondPage.style.display = "block";
@@ -104,15 +130,13 @@ button.addEventListener("click", function (e) {
 const to = document.querySelector(".search2");
 to.addEventListener("submit", function (e) {
   e.preventDefault();
-  //   console.log(searchInput2.value);
-  //   google(searchInput2.value);
   if (!searchInput2.value) return;
   google(`https://www.googleapis.com/books/v1/volumes?q=${searchInput2.value}`);
   searchvalue = searchInput2.value;
 });
 
 currentPage = 1;
-googleDown.addEventListener("click", function (e) {
+googleDown.addEventListener("click", async function (e) {
   if (!e.target.closest("[data-index]")) return;
   let data = e.target.closest("[data-index]").dataset.index;
   document.querySelector(".active").className = "not-active";
@@ -121,21 +145,18 @@ googleDown.addEventListener("click", function (e) {
   if (data == "next") {
     data = currentPage + 1;
     currentPage = data;
-    // console.log(data);
     const start = (data - 1) * 10;
-    // google(searchvalue, start);
-    google(
+    await google(
       `https://www.googleapis.com/books/v1/volumes?q=${searchvalue}&startIndex=${start}&maxResults=10`
     );
   } else {
     currentPage = data;
-    // console.log(data);
     const start = (data - 1) * 10;
-    // google(searchvalue, start);
-    google(
+    await google(
       `https://www.googleapis.com/books/v1/volumes?q=${searchvalue}&startIndex=${start}&maxResults=10`
     );
   }
+  document.documentElement.scrollTop = 0;
 });
 
 viewSelect.addEventListener("click", function () {
@@ -186,4 +207,8 @@ clear.addEventListener("click", function () {
   google(
     `https://www.googleapis.com/books/v1/volumes?q=${searchvalue}&startIndex=0&maxResults=10`
   );
+  clear.style.display = "none";
+  documentSelect.selectedIndex = 0;
+  relevance.selectedIndex = 0;
+  viewSelect.selectedIndex = 0;
 });
