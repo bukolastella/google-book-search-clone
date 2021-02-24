@@ -723,8 +723,8 @@ div.buks {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -webkit-box-shadow: 1px 5px 7px #777777;
-            box-shadow: 1px 5px 7px #777777;
+    -webkit-box-shadow: 0px 0px 7px #777777;
+            box-shadow: 0px 0px 7px #777777;
     padding: 1rem;
     border-radius: 5px;
   }
