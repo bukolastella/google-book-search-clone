@@ -48,8 +48,8 @@
 }
 .google-logo {
   background-image: url("../images/googlelogo_color_272x92dp.png");
-  width: 50%;
-  height: 40%;
+  width: 400px;
+  height: 100px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -57,7 +57,7 @@
   color: #4285f4;
   font-size: 1.4rem;
   position: relative;
-  span {
+  div {
     position: absolute;
     left: 75%;
     bottom: 0%;
