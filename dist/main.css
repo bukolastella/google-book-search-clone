@@ -753,6 +753,10 @@ div.buks {
     -o-object-fit: contain;
        object-fit: contain;
   }
+  .pt2,
+  .app2 {
+    display: none;
+  }
   .title {
     width: 100%;
     white-space: normal;
