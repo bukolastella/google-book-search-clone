@@ -26,7 +26,6 @@ const google = async function (api) {
     const res = await fetch(api);
     const data = await res.json();
     country = data.items[0].saleInfo.country.toLocaleString();
-    // console.log();
 
     //   console.log(data.items.map((r) => r.volumeInfo.publishedDate));
 
