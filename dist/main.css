@@ -6,6 +6,10 @@
   font-family: "Roboto", sans-serif;
 }
 
+body {
+  width: 100%;
+}
+
 .header1 {
   background-color: white;
   display: -webkit-box;
@@ -383,12 +387,13 @@ form select {
 }
 
 .second-page {
+  width: 100%;
   display: none;
 }
 
 .render {
-  margin-left: 16rem;
-  width: 80%;
+  padding-left: 14rem;
+  width: 100%;
   display: none;
 }
 
@@ -658,11 +663,9 @@ div.buks {
   }
   .header2 {
     padding: 0rem 0rem;
-    width: 100vw;
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
-    padding: 0rem;
   }
   .header2 .ac {
     position: static;
@@ -699,15 +702,18 @@ div.buks {
     margin-left: 8rem;
   }
   .render {
-    margin-left: 5rem;
+    padding-left: 5rem;
     width: 100%;
   }
 }
 
 @media (max-width: 700px) {
   .render,
-  .select,
   nav {
+    margin: 0;
+    padding-left: 3rem;
+  }
+  .select {
     margin-left: 3rem;
   }
   nav,
@@ -795,7 +801,12 @@ div.buks {
   .select {
     width: 100%;
   }
-  nav {
-    margin-left: 1rem;
+  nav,
+  .select {
+    margin: 0rem;
+  }
+  .footer2,
+  .footer3 {
+    padding: 1rem 1rem;
   }
 }

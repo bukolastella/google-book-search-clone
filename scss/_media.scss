@@ -4,9 +4,7 @@
   }
   .header2 {
     padding: 0rem 0rem;
-    width: 100vw;
     justify-content: space-evenly;
-    padding: 0rem;
     .ac {
       position: static;
     }
@@ -43,14 +41,17 @@
     margin-left: 8rem;
   }
   .render {
-    margin-left: 5rem;
+    padding-left: 5rem;
     width: 100%;
   }
 }
 @media (max-width: 700px) {
   .render,
-  .select,
   nav {
+    margin: 0;
+    padding-left: 3rem;
+  }
+  .select {
     margin-left: 3rem;
   }
   nav,
@@ -121,7 +122,12 @@
   .select {
     width: 100%;
   }
-  nav {
-    margin-left: 1rem;
+  nav,
+  .select {
+    margin: 0rem;
+  }
+  .footer2,
+  .footer3 {
+    padding: 1rem 1rem;
   }
 }
