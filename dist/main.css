@@ -708,10 +708,13 @@ div.buks {
 }
 
 @media (max-width: 700px) {
+  .row {
+    width: 90%;
+  }
   .render,
   nav {
     margin: 0;
-    padding-left: 3rem;
+    padding-left: 2rem;
   }
   .select {
     margin-left: 3rem;
@@ -719,6 +722,12 @@ div.buks {
   nav,
   .down-btn {
     width: 100%;
+  }
+  .down-btn {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .row {
     -ms-flex-wrap: wrap;
@@ -804,6 +813,12 @@ div.buks {
   nav,
   .select {
     margin: 0rem;
+  }
+  .pt1 {
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .footer2,
   .footer3 {
